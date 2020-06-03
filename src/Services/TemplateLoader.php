@@ -5,6 +5,7 @@ namespace Frosh\WebP\Services;
 use Shopware\Core\PlatformRequest;
 use Symfony\Bundle\TwigBundle\Loader\NativeFilesystemLoader;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Twig\Loader\LoaderInterface;
 
 class TemplateLoader extends NativeFilesystemLoader
 {
@@ -19,7 +20,7 @@ class TemplateLoader extends NativeFilesystemLoader
     private $requestStack;
 
     public function __construct(
-        NativeFilesystemLoader $filesystemLoader,
+        LoaderInterface $filesystemLoader,
         ConfigService $configService,
         RequestStack $requestStack
     ) {
